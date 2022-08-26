@@ -163,8 +163,13 @@ export default function Home() {
             <a>Mint your CryptoDev</a>
           </Link>
         </div>
-        <div>
-          <Image className={styles.image} src="./crypto-devs.svg" alt="crypto devs logo"/>
+        <div className={styles.image}>
+          <Image 
+            width="500"
+            height="500"
+            src="/crypto-devs.svg"
+            alt="crypto devs logo"
+          />
         </div>
       </div>
 

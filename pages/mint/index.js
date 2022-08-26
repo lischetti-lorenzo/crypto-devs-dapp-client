@@ -254,8 +254,13 @@ export default function Presale() {
           </div>
           {renderButton()}
         </div>
-        <div>
-        < Image className={styles.image} src="./cryptodevs/0.svg" alt="crypto devs logo"/>
+        <div className={styles.image}>
+          <Image 
+            width="500"
+            height="500"
+            src="/cryptodevs/0.svg"
+            alt="crypto devs logo"
+          />
         </div>
       </div>
 
