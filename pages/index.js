@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from 'next/link'
+import Image from 'next/image';
 import styles from "../styles/Home.module.css";
 import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
@@ -137,6 +139,7 @@ export default function Home() {
       });
       connectWallet();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [walletConnected]);
 
   return (
@@ -156,10 +159,12 @@ export default function Home() {
             {numberOfWhitelisted} have already joined the Whitelist
           </div>
           {renderButton()}
-          <a href='/mint'>Mint your CryptoDev</a>
+          <Link href="/mint">
+            <a>Mint your CryptoDev</a>
+          </Link>
         </div>
         <div>
-          <img className={styles.image} src="./crypto-devs.svg" />
+          <Image className={styles.image} src="./crypto-devs.svg" alt="crypto devs logo"/>
         </div>
       </div>
 

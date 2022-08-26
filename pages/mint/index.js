@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Web3Modal from 'web3modal';
 import styles from '../../styles/Presale.module.css';
 import {Contract, utils, providers} from 'ethers';
@@ -181,6 +182,7 @@ export default function Presale() {
         }
       }, 5000);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [walletConnected]);
 
   const renderButton = () => {
@@ -253,7 +255,7 @@ export default function Presale() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./cryptodevs/0.svg" />
+        < Image className={styles.image} src="./cryptodevs/0.svg" alt="crypto devs logo"/>
         </div>
       </div>
 
