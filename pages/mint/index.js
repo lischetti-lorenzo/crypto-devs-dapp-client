@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Web3Modal from 'web3modal';
 import styles from '../../styles/Presale.module.css';
 import {Contract, utils, providers} from 'ethers';
-import {cryptoDevsAbi, CRYPTO_DEVS_CONTRACT_ADDRESS} from '../../constants';
+import {NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS} from '../../constants';
 
 export default function Presale() {
   const [walletConnected, setWalletConnected] = useState(false);
@@ -44,8 +44,8 @@ export default function Presale() {
   const getCryptoDevsContractInstance = async (needSigner = false) => {
     const provider = await getProviderOrSigner(needSigner);
     const cryptoDevsContract = new Contract(
-      CRYPTO_DEVS_CONTRACT_ADDRESS,
-      cryptoDevsAbi,
+      NFT_CONTRACT_ADDRESS,
+      NFT_CONTRACT_ABI,
       provider
     );
 

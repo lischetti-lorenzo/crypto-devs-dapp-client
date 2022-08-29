@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
 import { useEffect, useRef, useState } from "react";
-import { WHITELIST_CONTRACT_ADDRESS, whitelistAbi} from "../constants";
+import { WHITELIST_CONTRACT_ADDRESS, WHITELIST_CONTRACT_ABI} from "../constants";
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
@@ -41,7 +41,7 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        whitelistAbi,
+        WHITELIST_CONTRACT_ABI,
         signer
       );
       
@@ -64,7 +64,7 @@ export default function Home() {
       const provider = await getProviderOrSigner();
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        whitelistAbi,
+        WHITELIST_CONTRACT_ABI,
         provider
       );
 
@@ -80,7 +80,7 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       const whitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
-        whitelistAbi,
+        WHITELIST_CONTRACT_ABI,
         signer
       );
       
@@ -161,6 +161,11 @@ export default function Home() {
           {renderButton()}
           <Link href="/mint">
             <a>Mint your CryptoDev</a>
+          </Link>
+          <br />
+          <br />
+          <Link href="/ico">
+            <a>Go to ICO</a>
           </Link>
         </div>
         <div className={styles.image}>
